@@ -1,10 +1,17 @@
 import "../styles/globals.css";
-import { ThemeProvider, theme } from "@chakra-ui/core";
 import { ThemeProvider, theme, CSSReset } from "@chakra-ui/core";
+
+const customTheme = {
+  ...theme,
+  colors: {
+    ...theme.colors,
+    spacejelly: "#692ba8",
+  },
+};
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={customTheme}>
       <CSSReset />
       <Component {...pageProps} />
     </ThemeProvider>
